@@ -4,8 +4,7 @@
 }
 
 <!DOCTYPE html>
-
-<html>
+<html lang="en">
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -22,6 +21,8 @@
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!-- jquery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 </head>
 <body id="page-top">
     <!-- Page Wrapper -->
@@ -56,9 +57,9 @@
                 <div id="collapseTwo" class="collapse show" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Thông tin:</h6>
-                        <a class="collapse-item" href="@Url.Action("Index","GiaoVien")">Giáo viên</a> <!-- tìm,in và cập nhật lý lich giáo viên -->
+                        <a class="collapse-item" href="teacher_info.html">Giáo viên</a> <!-- tìm,in và cập nhật lý lich giáo viên -->
                         <a class="collapse-item" href="teacher_activity.html">Hồ sơ hoạt động</a>
-                        <a class="collapse-item active" href="@Url.Action("Them","GiaoVien")">Thêm giáo viên</a>
+                        <a class="collapse-item active" href="teacher_add-teacher.html">Thêm giáo viên</a>
                         <a class="collapse-item" href="teacher_family.html">Thân nhân</a> <!-- tìm, cấp nhật thân nhân theo giáo viên -->
                     </div>
                 </div>
@@ -166,7 +167,7 @@
                 <!-- Begin Page Content -->
                 <div class="container-fluid">
                     <!-- Page Heading -->
-                    <h1 class="h3 mb-4 text-gray-800">Cập nhật</h1>
+                    <h1 class="h3 mb-4 text-gray-800">Thêm giáo viên</h1>
 
                     <!-- Tabs -->
                     <section id="tabs">
@@ -176,25 +177,10 @@
                                     <nav>
                                         <div class="nav nav-tabs nav-fill" id="nav-tab" role="tablist">
                                             <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true">Thêm mới Giáo viên</a>
-                                            <a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-profile" aria-selected="false">Thông tin liên lạc</a>
-                                            <a class="nav-item nav-link" id="nav-fam-profile-tab" data-toggle="tab" href="#nav-fam-profile" role="tab" aria-controls="nav-fam-profile" aria-selected="false">Thông tin thân nhân</a>
-                                            <a class="nav-item nav-link" id="nav-contact-tab" data-toggle="tab" href="#nav-contact" role="tab" aria-controls="nav-contact" aria-selected="false">Trình độ học vấn</a>
-                                            <a class="nav-item nav-link" id="nav-about-tab" data-toggle="tab" href="#nav-about" role="tab" aria-controls="nav-about" aria-selected="false">Chức vụ</a>
                                         </div>
                                     </nav>
                                     <div class="tab-content py-3 px-3 px-sm-0" id="nav-tabContent">
                                         <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
-                                            <form>
-                                                <div class="form-row">
-                                                    <div class="form-group col-md-10">
-                                                        <label for="inputName"><i class="fas fa-search" aria-hidden="true"></i></label>
-                                                        <input class="form-control" type="text" placeholder="Nhập mã giáo viên" aria-label="Search">
-                                                        <small id="passwordHelpBlock" class="form-text text-muted">
-                                                            Tìm giáo viên bạn muốn sửa thông tin cá nhân
-                                                        </small>
-                                                    </div>
-                                                </div>
-                                            </form>
                                             <!-- Form tag -->
                                             <form>
                                                 <div class="form-row">
@@ -239,467 +225,14 @@
                                                         <option data-tokens="khmt">Khoa học máy tính</option>
                                                     </select>
                                                 </div>
-                                                <div class="form-row">
-                                                    <div class="form-group col-md-2">
-                                                        <button type="submit" class="btn btn-primary">Cập nhật</button>
-                                                    </div>
-                                                    <div class="form-group col-md-2">
-                                                        <button type="reset" class="btn btn-primary">Thêm giáo viên</button>
-                                                        <small id="passwordHelpBlock" class="form-text text-muted">
-                                                            Tự Generate một mã giáo viên mới
-                                                        </small>
-                                                    </div>
-                                                </div>
+                                                <button type="reset" class="btn btn-primary">Thêm giáo viên</button>
+                                                <small id="passwordHelpBlock" class="form-text text-muted">
+                                                    Tự Generate một mã giáo viên mới
+                                                </small>
                                             </form>
                                             <!-- End From tag -->
                                         </div>
-                                        <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
-                                            <!-- Form Tag -->
-                                            <form>
-                                                <div class="form-row">
-                                                    <div class="form-group col-md-3">
-                                                        <label for="inputName"><i class="fas fa-search" aria-hidden="true"></i></label>
-                                                        <input class="form-control" type="text" placeholder="Nhập mã giáo viên" aria-label="Search">
-                                                        <small id="passwordHelpBlock" class="form-text text-muted">
-                                                            Tìm giáo viên bạn muốn câp nhật thông tin liên lạc
-                                                        </small>
-                                                    </div>
-                                                    <div class="form-group col-md-6">
-                                                        <label for="inputName">Họ và tên:</label>
-                                                        <input type="text" class="form-control" id="inputName" value="Lê Minh Hiếu" disabled="true">
-                                                    </div>
-                                                    <div class="form-group col-md-3">
-                                                        <label>Ngày sinh:</label>
-                                                        <input type="text" class="form-control" value="07/02/1998" disabled="true">
-                                                    </div>
-                                                </div>
-                                                <div class="form-row">
-                                                    <div class="form-group col-md-6">
-                                                        <label for="example-date-input">Ngày bắt đầu:</label>
-                                                        <input class="form-control" type="date" id="example-date-input">
-                                                    </div>
-                                                    <div class="form-group col-md-6">
-                                                        <label for="example-date-input">Ngày kết thúc:</label>
-                                                        <input class="form-control" type="date" id="example-date-input">
-                                                    </div>
-                                                </div>
-                                                <div class="form-row">
-                                                    <div class="form-group col-md-4">
-                                                        <label for="inputPrecinct">Phường:</label>
-                                                        <input type="text" class="form-control" id="inputPrecinct" placeholder="Hàng Trống">
-                                                    </div>
-                                                    <div class="form-group col-md-4">
-                                                        <label for="inputDistrict">Quận:</label>
-                                                        <input type="text" class="form-control" id="inputDistrict" placeholder="Hoàn Kiếm">
-                                                    </div>
-                                                    <div class="form-group col-md-4">
-                                                        <label for="inputCity">Thành phố:</label>
-                                                        <select id="inputCity" class="form-control" class="selectpicker" data-live-search="true">
-                                                            <option selected>Chọn</option>
-                                                            <option data-tokens="hanoi">Hà Nội</option>
-                                                            <option data-tokens="ninhbinh">Ninh Bình</option>
-                                                            <option data-tokens="hochiminh">Hồ Chí Minh</option>
-                                                            <option data-tokens="kiengiang">Kiên Giang</option>
-                                                        </select>
-                                                    </div>
-                                                </div>
-                                                <div class="form-row">
-                                                    <div class="form-group col-md-6">
-                                                        <label for="inputTel">Số điện thoại nhà riêng:</label>
-                                                        <input class="form-control" type="text" id="inputTel">
-                                                    </div>
-                                                    <div class="form-group col-md-6">
-                                                        <label for="inputPhone">Số điện thoại di động</label>
-                                                        <input class="form-control" type="text" id="inputPhone">
-                                                    </div>
-                                                </div>
-                                                <div class="form-group">
-                                                    <label for="inputEmail1">Email:</label>
-                                                    <input type="email" class="form-control" id="inputEmail1" aria-describedby="emailHelp" placeholder="Nhập email">
-                                                    <small id="emailHelp" class="form-text text-muted">Nhập đúng format email.</small>
-                                                </div>
-                                                <button type="submit" class="btn btn-primary">Cập nhật</button>
-                                            </form>
-                                            <!-- End Form Tag -->
-                                        </div>
-                                        <div class="tab-pane fade" id="nav-fam-profile" role="tabpanel" aria-labelledby="nav-fam-profile-tab">
-                                            <form>
-                                                <div class="form-row">
-                                                    <div class="form-group col-md-3">
-                                                        <label for="inputName"><i class="fas fa-search" aria-hidden="true"></i></label>
-                                                        <input class="form-control" type="text" placeholder="Nhập mã giáo viên" aria-label="Search">
-                                                        <small id="passwordHelpBlock" class="form-text text-muted">
-                                                            Tìm giáo viên bạn muốn thêm thân nhân
-                                                        </small>
-                                                    </div>
-                                                    <div class="form-group col-md-6">
-                                                        <label for="inputName">Họ và tên:</label>
-                                                        <input type="text" class="form-control" id="inputName" value="Lê Minh Hiếu" disabled="true">
-                                                    </div>
-                                                    <div class="form-group col-md-3">
-                                                        <label>Ngày sinh:</label>
-                                                        <input type="text" class="form-control" value="07/02/1998" disabled="true">
-                                                    </div>
-                                                </div>
-                                                <div class="form-row">
-                                                    <div class="form-group col-md-8">
-                                                        <label for="inputName">Họ và tên thân nhân:</label>
-                                                        <input type="text" class="form-control" id="inputName" placeholder="Họ và tên">
-                                                    </div>
-                                                    <div class="form-group col-md-4">
-                                                        <label for="inputGender">Giới tính:</label>
-                                                        <select id="inputGender" class="form-control" class="selectpicker" data-live-search="true">
-                                                            <option selected>Chọn</option>
-                                                            <option data-tokens="nam">Nam</option>
-                                                            <option data-tokens="nu">Nữ</option>
-                                                        </select>
-                                                    </div>
-                                                </div>
-                                                <div class="form-group">
-                                                    <label for="example-date-input">Ngày sinh:</label>
-                                                    <input class="form-control" type="date" id="example-date-input">
-                                                </div>
-                                                <div class="form-group">
-                                                    <label for="inputName">Nghề nghiệp:</label>
-                                                    <input type="text" class="form-control" id="inputName" placeholder="Họ và tên">
-                                                </div>
-                                                <button type="submit" class="btn btn-primary">Thêm thân nhân</button>
-                                            </form>
-
-                                        </div>
-                                        <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">
-                                            <form>
-                                                <div class="form-row">
-                                                    <div class="form-group col-md-3">
-                                                        <label for="inputName"><i class="fas fa-search" aria-hidden="true"></i></label>
-                                                        <input class="form-control" type="text" placeholder="Nhập mã giáo viên" aria-label="Search">
-                                                        <small id="passwordHelpBlock" class="form-text text-muted">
-                                                            Tìm giáo viên bạn muốn cập nhật trình độ học vấn
-
-                                                        </small>
-                                                    </div>
-                                                    <div class="form-group col-md-6">
-                                                        <label for="inputName">Họ và tên:</label>
-                                                        <input type="text" class="form-control" id="inputName" value="Lê Minh Hiếu" disabled="true">
-                                                    </div>
-                                                    <div class="form-group col-md-3">
-                                                        <label>Ngày sinh:</label>
-                                                        <input type="text" class="form-control" value="07/02/1998" disabled="true">
-                                                    </div>
-                                                </div>
-                                                <div class="form-row">
-                                                    <div class="form-group col-md-6">
-                                                        <label for="example-date-input">Ngày bắt đầu:</label>
-                                                        <input class="form-control" type="date" id="example-date-input">
-                                                    </div>
-                                                    <div class="form-group col-md-6">
-                                                        <label for="example-date-input">Ngày kết thúc:</label>
-                                                        <input class="form-control" type="date" id="example-date-input">
-                                                    </div>
-                                                </div>
-                                                <div class="form-row">
-                                                    <div class="form-group col-md-6">
-                                                        <label for="inputHocVi">Học vị:</label>
-                                                        <select id="inputGender" class="form-control" class="selectpicker" data-live-search="true">
-                                                            <option selected>Chọn</option>
-                                                            <option data-tokens="cn">Cử nhân</option>
-                                                            <option data-tokens="ts">Tiến sỹ</option>
-                                                            <option data-tokens="ts">Thạc sỹ</option>
-                                                        </select>
-                                                        <small id="passwordHelpBlock" class="form-text text-muted">
-                                                            Hoc vị lấy từ bảng học vị
-                                                        </small>
-                                                    </div>
-                                                    <div class="form-group col-md-6">
-                                                        <label for="inputTrinhDo">Tên trình độ:</label>
-                                                        <select id="inputTrinhDo" class="form-control" class="selectpicker" data-live-search="true">
-                                                            <option selected>Chọn</option>
-                                                            <option data-tokens="cd">Cao đẳng</option>
-                                                            <option data-tokens="dh">Đại học</option>
-                                                            <option data-tokens="sdh">Sau đại học</option>
-                                                        </select>
-                                                    </div>
-                                                </div>
-                                                <div class="form-row">
-                                                    <div class="form-group col-md-8">
-                                                        <label for="inputNoiDaoTao">Nơi đào tạo:</label>
-                                                        <input type="text" class="form-control" id="inputNoiDaoTao" value="Học viện Kỹ thuật quân sự">
-                                                        <small id="passwordHelpBlock" class="form-text text-muted">
-                                                            Trường đào tạo của giáo viên
-                                                        </small>
-                                                    </div>
-                                                    <div class="form-group col-md-4">
-                                                        <label for="inputCountry">Nước đào tạo:</label>
-                                                        <input type="text" class="form-control" id="inputCountry" value="Việt Nam">
-                                                    </div>
-                                                </div>
-                                                <div class="form-row">
-                                                    <div class="form-group col-md-6">
-                                                        <label for="inputHeDaoTao">Hệ đào tạo:</label>
-                                                        <select id="inputHeDaoTao" class="form-control" class="selectpicker" data-live-search="true">
-                                                            <option selected>Chọn</option>
-                                                            <option data-tokens="cd">Dân sự</option>
-                                                            <option data-tokens="dh">Quân sự</option>
-                                                        </select>
-                                                        <small id="passwordHelpBlock" class="form-text text-muted">
-                                                            Hệ đào tạo của giáo viên
-                                                        </small>
-                                                    </div>
-                                                    <div class="form-group col-md-6">
-                                                        <label for="inputCountry">Năm cấp:</label>
-                                                        <input type="text" class="form-control" id="inputCountry" value="2010">
-                                                    </div>
-                                                </div>
-                                                <button type="submit" class="btn btn-primary">Cập nhật trình độ học vấn</button>
-                                            </form>
-                                        </div>
-                                        <div class="tab-pane fade" id="nav-about" role="tabpanel" aria-labelledby="nav-about-tab">
-                                            <form>
-                                                <div class="form-row">
-                                                    <div class="form-group col-md-3">
-                                                        <label for="inputName"><i class="fas fa-search" aria-hidden="true"></i></label>
-                                                        <input class="form-control" type="text" placeholder="Nhập mã giáo viên" aria-label="Search">
-                                                        <small id="passwordHelpBlock" class="form-text text-muted">
-                                                            Tìm giáo viên bạn muốn cập nhật chức vụ
-                                                        </small>
-                                                    </div>
-                                                    <div class="form-group col-md-6">
-                                                        <label for="inputName">Họ và tên:</label>
-                                                        <input type="text" class="form-control" id="inputName" value="Lê Minh Hiếu" disabled="true">
-                                                    </div>
-                                                    <div class="form-group col-md-3">
-                                                        <label>Ngày sinh:</label>
-                                                        <input type="text" class="form-control" value="07/02/1998" disabled="true">
-                                                    </div>
-                                                </div>
-                                                <!-- Chuc vu Dang -->
-                                                <div class="form-group">
-                                                    <input type="checkbox" id="CVDang" onChange="myFunction1()">Chức vụ Đảng:
-
-                                                    <div class="form-group">
-                                                        <label for="inputCVDang" class="h3">Chức vụ Đảng:</label>
-                                                        <select id="inputCVDang" class="form-control Dang" class="selectpicker" data-live-search="true" disabled="true">
-                                                            <option selected>Chọn</option>
-                                                            <option>Đảng viên</option>
-                                                            <option>...</option>
-                                                        </select>
-                                                        <small id="passwordHelpBlock" class="form-text text-muted">
-                                                            Chức vụ Đảng của giáo viên.
-                                                        </small>
-                                                    </div>
-                                                    <div class="form-row">
-                                                        <div class="form-group col-md-6">
-                                                            <label for="example-date-input">Ngày bắt đầu:</label>
-                                                            <input class="form-control Dang" type="date" id="example-date-input" disabled="true">
-                                                        </div>
-                                                        <div class="form-group col-md-6">
-                                                            <label for="example-date-input">Ngày kết thúc:</label>
-                                                            <input class="form-control Dang" type="date" id="example-date-input" disabled="true">
-                                                        </div>
-                                                    </div>
-                                                    <form>
-                                                        <button type="submit" class="btn btn-primary Dang " disabled="true">Cập nhật</button>
-                                                    </form>
-                                                    <script type="text/javascript">
-                                                        function myFunction1() {
-
-                                                            var elements = document.getElementsByClassName("Dang");
-                                                            var el = document.getElementById("CVDang");
-
-                                                            for (var i = 0; i < elements.length; i++) {
-                                                                if (el.checked) {
-                                                                    elements[i].disabled = false;
-                                                                } else {
-                                                                    elements[i].disabled = true;
-                                                                }
-                                                            }
-                                                        }
-                                                    </script>
-                                                </div>
-
-                                                <!-- end Chuc Vu Dang                     -->
-                                                <!-- Chuc vu Chinh quyen -->
-                                                <div class="form-group">
-                                                    <input type="checkbox" id="CVCQ" onChange="myFunction2()">Chức vụ Chính quyền:
-
-                                                    <div class="form-group">
-                                                        <label for="inputCVCQ" class="h3">Chức vụ Chính quyền:</label>
-                                                        <select id="inputCVCQ" class="form-control CQ" class="selectpicker" data-live-search="true" disabled="true">
-                                                            <option selected>Chọn</option>
-                                                            <option>Chủ nhiệm bộ môn</option>
-                                                            <option>Chủ nhiệm Khoa</option>
-                                                            <option>Giáo viên</option>
-                                                        </select>
-                                                        <small id="passwordHelpBlock" class="form-text text-muted">
-                                                            Chức vụ chính quyền của giáo viên.
-                                                        </small>
-                                                    </div>
-                                                    <div class="form-row">
-                                                        <div class="form-group col-md-6">
-                                                            <label for="example-date-input">Ngày bắt đầu:</label>
-                                                            <input class="form-control CQ" type="date" id="example-date-input" disabled="true">
-                                                        </div>
-                                                        <div class="form-group col-md-6">
-                                                            <label for="example-date-input">Ngày kết thúc:</label>
-                                                            <input class="form-control CQ" type="date" id="example-date-input" disabled="true">
-                                                        </div>
-                                                    </div>
-                                                    <form>
-                                                        <button type="submit" class="btn btn-primary CQ " disabled="true">Cập nhật</button>
-                                                    </form>
-                                                    <script type="text/javascript">
-                                                        function myFunction2() {
-
-                                                            var elements = document.getElementsByClassName("CQ");
-                                                            var el = document.getElementById("CVCQ");
-
-                                                            for (var i = 0; i < elements.length; i++) {
-                                                                if (el.checked) {
-                                                                    elements[i].disabled = false;
-                                                                } else {
-                                                                    elements[i].disabled = true;
-                                                                }
-                                                            }
-                                                        }
-                                                    </script>
-                                                </div>
-                                                <!-- end Chuc Vu Chinh quyen                     -->
-                                                <!-- Chuc vu Chuyen mon -->
-                                                <div class="form-group">
-                                                    <input type="checkbox" id="CVCMNV" onChange="myFunction3()">Chức vụ Chuyên môn nghiệp vụ:
-                                                    <div class="form-group">
-                                                        <label for="inputCVCMNV" class="h3">Chức vụ Chuyên môn nghiệp vụ:</label>
-                                                        <select id="inputCVCMNV" class="form-control CMNV" class="selectpicker" data-live-search="true" disabled="true">
-                                                            <option selected>Chọn</option>
-                                                            <option>Giảng viên</option>
-                                                            <option>Trợ giảng</option>
-                                                        </select>
-                                                        <small id="passwordHelpBlock" class="form-text text-muted">
-                                                            Chức vụ chuyên môn nghiệp vụ của giáo viên.
-                                                        </small>
-                                                    </div>
-                                                    <div class="form-row">
-                                                        <div class="form-group col-md-6">
-                                                            <label for="example-date-input">Ngày bắt đầu:</label>
-                                                            <input class="form-control CMNV" type="date" id="example-date-input" disabled="true">
-                                                        </div>
-                                                        <div class="form-group col-md-6">
-                                                            <label for="example-date-input">Ngày kết thúc:</label>
-                                                            <input class="form-control CMNV" type="date" id="example-date-input" disabled="true">
-                                                        </div>
-                                                    </div>
-                                                    <form>
-                                                        <button type="submit" class="btn btn-primary CMNV " disabled="true">Cập nhật</button>
-                                                    </form>
-                                                    <script type="text/javascript">
-                                                        function myFunction3() {
-
-                                                            var elements = document.getElementsByClassName("CMNV");
-                                                            var el = document.getElementById("CVCMNV");
-
-                                                            for (var i = 0; i < elements.length; i++) {
-                                                                if (el.checked) {
-                                                                    elements[i].disabled = false;
-                                                                } else {
-                                                                    elements[i].disabled = true;
-                                                                }
-                                                            }
-                                                        }
-                                                    </script>
-                                                </div>
-                                                <!-- end Chuc Vu Chuyen mon                     -->
-                                                <!-- Học ham -->
-                                                <div class="form-group">
-                                                    <input type="checkbox" id="Hocham" onChange="myFunction4()">Học hàm:
-
-                                                    <div class="form-group">
-                                                        <label for="inputHocham" class="h3">Học hàm:</label>
-                                                        <select id="inputHocham" class="form-control HH" class="selectpicker" data-live-search="true" disabled="true">
-                                                            <option selected>Chọn</option>
-                                                            <option>Phó giáo sư</option>
-                                                            <option>Giáo sư</option>
-                                                        </select>
-                                                        <small id="passwordHelpBlock HH" class="form-text text-muted">
-                                                            Học hàm của giáo viên.
-                                                        </small>
-                                                    </div>
-                                                    <div class="form-row">
-                                                        <div class="form-group col-md-6">
-                                                            <label for="example-date-input">Ngày bắt đầu:</label>
-                                                            <input class="form-control HH" type="date" id="example-date-input" disabled="true">
-                                                        </div>
-                                                        <div class="form-group col-md-6">
-                                                            <label for="example-date-input">Ngày kết thúc:</label>
-                                                            <input class="form-control HH" type="date" id="example-date-input" disabled="true">
-                                                        </div>
-                                                    </div>
-                                                    <form>
-                                                        <button type="submit" class="btn btn-primary HH " disabled="true">Cập nhật</button>
-                                                    </form>
-                                                    <script type="text/javascript">
-                                                        function myFunction4() {
-
-                                                            var elements = document.getElementsByClassName("HH");
-                                                            var el = document.getElementById("Hocham");
-
-                                                            for (var i = 0; i < elements.length; i++) {
-                                                                if (el.checked) {
-                                                                    elements[i].disabled = false;
-                                                                } else {
-                                                                    elements[i].disabled = true;
-                                                                }
-                                                            }
-                                                        }
-                                                    </script>
-                                                </div>
-                                                <!-- end Hoc ham                     -->
-                                                <!-- Học vi -->
-                                                <div class="form-group">
-                                                    <input type="checkbox" id="Hocvi" onChange="myFunction5()">Học vị cao nhất:
-                                                    <div class="form-group">
-                                                        <label for="inputHocvi" class="h3">Học vị cao nhất:</label>
-                                                        <select id="inputHocvi" class="form-control HV" class="selectpicker" data-live-search="true" disabled="true">
-                                                            <option selected>Chọn</option>
-                                                            <option>Kỹ sư</option>
-                                                        </select>
-                                                        <small id="passwordHelpBlock" class="form-text text-muted">
-                                                            Học hàm của giáo viên.
-                                                        </small>
-                                                    </div>
-                                                    <div class="form-row">
-                                                        <div class="form-group col-md-6">
-                                                            <label for="example-date-input">Ngày bắt đầu:</label>
-                                                            <input class="form-control HV" type="date" id="example-date-input" disabled="true">
-                                                        </div>
-                                                        <div class="form-group col-md-6">
-                                                            <label for="example-date-input">Ngày kết thúc:</label>
-                                                            <input class="form-control HV" type="date" id="example-date-input" disabled="true">
-                                                        </div>
-                                                    </div>
-                                                    <form>
-                                                        <button type="submit" class="btn btn-primary HV " disabled="true">Cập nhật</button>
-                                                    </form>
-                                                    <script type="text/javascript">
-                                                        function myFunction5() {
-
-                                                            var elements = document.getElementsByClassName("HV");
-                                                            var el = document.getElementById("Hocvi");
-
-                                                            for (var i = 0; i < elements.length; i++) {
-                                                                if (el.checked) {
-                                                                    elements[i].disabled = false;
-                                                                } else {
-                                                                    elements[i].disabled = true;
-                                                                }
-                                                            }
-                                                        }
-                                                    </script>
-                                                </div>
-                                                <!-- end Hoc vị                     -->
-                                            </form>
-                                        </div>
                                     </div>
-
                                 </div>
                             </div>
                         </div>
@@ -744,10 +277,12 @@
             </div>
         </div>
     </div>
-
+    <!-- Bootstrap core JavaScript-->
     <script src="~/Content/vendor/jquery/jquery.min.js"></script>
     <script src="~/Content/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- Core plugin JavaScript-->
     <script src="~/Content/vendor/jquery-easing/jquery.easing.min.js"></script>
+    <!-- Custom scripts for all pages-->
     <script src="~/Scripts/sb-admin-2.min.js"></script>
 </body>
 </html>
