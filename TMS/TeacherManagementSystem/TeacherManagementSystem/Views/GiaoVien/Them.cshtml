@@ -37,7 +37,7 @@
             <hr class="sidebar-divider my-0">
             <!-- Nav Item - Welcome -->
             <li class="nav-item ">
-                <a class="nav-link" href="index.html">
+                <a class="nav-link" href="@Url.Action("Index","Home")">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
                     <span>Chào mừng</span>
                 </a>
@@ -58,9 +58,8 @@
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Thông tin:</h6>
                         <a class="collapse-item" href="@Url.Action("Index","GiaoVien")">Giáo viên</a> <!-- tìm,in và cập nhật lý lich giáo viên -->
-                        <a class="collapse-item" href="teacher_activity.html">Hồ sơ hoạt động</a>
+                        <a class="collapse-item" href="@Url.Action("Sua", "Giaovien")">Sửa giáo viên</a>
                         <a class="collapse-item active" href="@Url.Action("Them","GiaoVien")">Thêm giáo viên</a>
-                        <a class="collapse-item" href="teacher_family.html">Thân nhân</a> <!-- tìm, cấp nhật thân nhân theo giáo viên -->
                     </div>
                 </div>
             </li>
@@ -68,12 +67,12 @@
             <li class="nav-item">
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities" aria-expanded="true" aria-controls="collapseUtilities">
                     <i class="fas fa-fw fa-wrench"></i>
-                    <span>Blank</span>
+                    <span>Tổng hợp</span>
                 </a>
                 <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <a class="collapse-item" href="">Blank</a>
-                        <a class="collapse-item" href="">blank</a>
+                        <a class="collapse-item" href="@Url.Action("LyLich","TongHop")">Lý lịch khoa học</a>
+                        <a class="collapse-item" href="@Url.Action("TonghopTai","TongHop")">Tổng hợp tải</a>
                     </div>
                 </div>
             </li>

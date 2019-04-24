@@ -58,6 +58,7 @@
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Thông tin:</h6>
                         <a class="collapse-item active" href="#">Giáo viên</a> <!-- Thông tin cơ bản tất cả giáo viên-->
+                        <a class="collapse-item" href="@Url.Action("Sua", "Giaovien")">Sửa giáo viên</a>
                         <a class="collapse-item" href="@Url.Action("Them","GiaoVien")">Thêm giáo viên</a>
                     </div>
                 </div>
@@ -66,12 +67,12 @@
             <li class="nav-item">
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities" aria-expanded="true" aria-controls="collapseUtilities">
                     <i class="fas fa-fw fa-wrench"></i>
-                    <span>Blank</span>
+                    <span>Tổng hợp</span>
                 </a>
                 <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <a class="collapse-item" href="">Blank</a>
-                        <a class="collapse-item" href="">blank</a>
+                        <a class="collapse-item" href="@Url.Action("LyLich","TongHop")">Lý lịch khoa học</a>
+                        <a class="collapse-item" href="@Url.Action("TonghopTai","TongHop")">Tổng hợp tải</a>
                     </div>
                 </div>
             </li>
@@ -177,41 +178,26 @@
                                 <table class="table table-bordered table-striped nowrap" id="dataTable" width="100%" cellspacing="0">
                                     <thead>
                                         <tr>
+                                            <th>Mã giáo viên</th>
                                             <th>Tên giáo viên</th>
                                             <th>Ngày sinh</th>
                                             <th>Giới tính</th>
                                             <th>Quê quán</th>
                                             <th>Bộ môn</th>
-                                            <th>Chi tiết</th>
                                         </tr>
                                     </thead>
-                                    <tfoot>
-                                        <tr>
-                                            <th>Tên giáo viên</th>
-                                            <th>Ngày sinh</th>
-                                            <th>Giới tính</th>
-                                            <th>Quê quán</th>
-                                            <th>Bộ môn</th>
-                                            <th>Chi tiết</th>
-                                        </tr>
-                                    </tfoot>
                                     <tbody>
-                                        <tr>
-                                            <td>Tiger Nixon</td>
-                                            <td>System Architect</td>
-                                            <td>Edinburgh</td>
-                                            <td>61</td>
-                                            <td>2011/04/25</td>
-                                            <td>$320,800</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Garrett Winters</td>
-                                            <td>Accountant</td>
-                                            <td>Tokyo</td>
-                                            <td>63</td>
-                                            <td>2011/07/25</td>
-                                            <td>$170,750</td>
-                                        </tr>
+                                        @foreach(var t in ViewBag.Teachers)
+                                        {
+                                            <tr>
+                                                <td>@t.MaGV</td>
+                                                <td>@t.HoTen</td>
+                                                <td>@t.NgaySinh</td>
+                                                <td>@t.GioiTinh</td>
+                                                <td>@t.QueQuan</td>
+                                                <td>@t.BoMon</td>
+                                            </tr>
+                                        }
                                     </tbody>
                                 </table>
                             </div>

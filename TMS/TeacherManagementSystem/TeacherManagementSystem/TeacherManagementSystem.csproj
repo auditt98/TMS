@@ -138,6 +138,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resource.resx</DependentUpon>
     </Compile>
+    <Compile Include="Controllers\TongHopController.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap-theme.css" />
@@ -1893,7 +1894,9 @@
     <Content Include="Scripts\modernizr-2.8.3.js" />
     <Content Include="Scripts\sb-admin-2.js" />
     <Content Include="Scripts\sb-admin-2.min.js" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
@@ -1908,6 +1911,8 @@
     <Content Include="Views\GiaoVien\Them.cshtml" />
     <Content Include="Views\GiaoVien\Sua.cshtml" />
     <Content Include="Views\GiaoVien\Index.cshtml" />
+    <Content Include="Views\TongHop\LyLich.cshtml" />
+    <Content Include="Views\TongHop\TonghopTai.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
