@@ -126,7 +126,11 @@ namespace TeacherManagementSystem.Controllers
 				return RedirectToAction("Index", "GiaoVien");
 			}
 		}
-	}
+
+    }
+
+
+
 
 	public class TempTeacher
 	{
